@@ -1,91 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Web Programming 2 Course</title>
+  <link rel="stylesheet" href="Stylelab1.css" />
 </head>
 <body>
 
-  <h1>Welcome to Web Programming 2 Course</h1>
+  <!-- Banner dùng ID để minh họa selector #id -->
+  <header id="top-banner">
+    <h1>Welcome to Web Programming 2 Course</h1>
+    <h2 class="student">Student Name: Nguyễn Trần Minh Nhật</h2>
+    <h2 class="student">Student ID: GCS230477</h2>
+  </header>
 
-  <h2>Student Name: Nguyễn Trần Minh Nhật</h2>
-  <h2>Student ID: GCS230477</h2>
+  <!-- Nav: minh họa child combinator nav > ul > li > a -->
+  <nav class="main-nav">
+    <ul>
+      <li><a class="nav-link" href="#">Home</a></li>
+      <li><a class="nav-link" href="#">About</a></li>
+      <li><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
+  <main class="container">
+    <!-- Section card: minh họa descendant combinator .card p -->
+    <section class="card" id="about-html">
+      <h2>About HTML</h2>
+      <!-- Adjacent sibling: h2 + p (thanh vàng nhạt) -->
+      <p class="lead">HTML stands for <b>HyperText Markup Language</b>.</p>
+      <p class="muted">It is the <i>standard</i> language for creating web pages.</p>
 
-  <h2>About HTML</h2>
-  <p>HTML stands for <b>HyperText Markup Language</b>.</p>
-  <p>It is the <i>standard</i> language for creating web pages.</p>
+      <figure>
+        <img src="https://picsum.photos/560/340" alt="random image" />
+        <figcaption>Src: https://picsum.photos/560/340</figcaption>
+      </figure>
+    </section>
 
-  <!-- Ảnh ngẫu nhiên -->
-  <img src="https://picsum.photos/200/300" alt="random image"><br>
-  <p>Src: https://picsum.photos/200/300</p>
+    <section class="card">
+      <h1>Welcome to the Web Programming Course! 📚</h1>
+      <!-- Attribute selectors cho form control -->
+      <p class="grade">Your grade: A+ 🏆</p>
+      <form class="inline-form">
+        <button type="submit">Submit 💾</button>
+      </form>
+      <p>Have a nice day! 😊</p>
+    </section>
 
-  <hr>
+    <section class="card article">
+      <h2>Sample Article</h2>
+      <p>This is an article section with an ordered list:</p>
+      <!-- General sibling: h2 ~ ol -->
+      <ol>
+        <li>Introduction</li>
+        <li>Details</li>
+        <li>Summary</li>
+      </ol>
+    </section>
 
-  <!-- PHẦN THÊM THEO PDF -->
-  <h1>Welcome to the Web Programming Course! 📚</h1>
-  <p>Your grade: A+ 🏆</p>
-  <form>
-    <button type="submit">Submit 💾</button>
-  </form>
-  <p>Have a nice day! 😊</p>
+    <section class="card contact">
+      <h2>Contact Form</h2>
+      <form class="contact-form">
+        <!-- Attribute selectors [type="text"], [type="email"] -->
+        <label>Name:
+          <input type="text" name="name" placeholder="Your name" />
+        </label>
+        <label>Email:
+          <input type="email" name="email" placeholder="you@example.com" />
+        </label>
+        <label>Message:
+          <textarea name="msg" rows="4" cols="40" placeholder="Say hello..."></textarea>
+        </label>
+        <input type="submit" value="Send" />
+      </form>
+    </section>
 
-  <hr>
-
-  <h2>Sample Article</h2>
-  <p>This is an article section with an ordered list:</p>
-  <ol>
-    <li>Introduction</li>
-    <li>Details</li>
-    <li>Summary</li>
-  </ol>
-
-  <hr>
-
-  <h2>Contact Form</h2>
-  <form>
-    Name: <input type="text" name="name"><br><br>
-    Email: <input type="email" name="email"><br><br>
-    Message:<br>
-    <textarea name="msg" rows="4" cols="40"></textarea><br><br>
-    <input type="submit" value="Send">
-  </form>
-
-  <hr>
-
-  <table border="1" cellpadding="5">
-    <tr>
-      <th>Student Name</th>
-      <th>ID</th>
-      <th>Course</th>
-      <th>Grade</th>
-    </tr>
-    <tr>
-      <td>Alice Nguyen</td>
-      <td>1001</td>
-      <td>Web Programming</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <td>Bob Tran</td>
-      <td>1002</td>
-      <td>Database</td>
-      <td>B+</td>
-    </tr>
-    <tr>
-      <td>Charlie Le</td>
-      <td>1003</td>
-      <td>Algorithms</td>
-      <td>A-</td>
-    </tr>
-  </table>
-
-  <p>© 2025 Web Programming Course</p>
+    <!-- Bảng: dùng :first-child, :last-child, :nth-child(even) -->
+    <section class="card">
+      <h2>Students</h2>
+      <table class="grades">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>ID</th>
+            <th>Course</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alice Nguyen</td>
+            <td>1001</td>
+            <td>Web Programming</td>
+            <td class="grade-a">A</td>
+          </tr>
+          <tr>
+            <td>Bob Tran</td>
+            <td>1002</td>
+            <td>Database</td>
+            <td>B+</td>
+          </tr>
+          <tr>
+            <td>Charlie Le</td>
+            <td>1003</td>
+            <td>Algorithms</td>
+            <td>A-</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="footer-note">© 2025 Web Programming Course</p>
+    </section>
+  </main>
 
 </body>
 </html>
